@@ -1,0 +1,248 @@
+/*  h1 = 60px, h2 - 40px , p=17px */
+
+* {
+  margin: 0px;
+  padding: 0px;
+  text-decoration: none;
+  list-style: none;
+  font-family: "Poppins";
+  overflow-x: hidden !important;
+}
+
+/* propriedades das fontes. */
+h1 {
+  font-size: 60px;
+  font-weight: 600;
+  line-height: 1;
+  overflow-y: hidden;
+}
+.hero h1 {
+  color: #abbb6f;
+}
+
+.formu-texto h2 {
+  color: #7f9838;
+  font-size: 45px;
+}
+.hero p,
+.resposta p,
+.formu-texto p {
+  color: #777664;
+  font-weight: 400;
+  font-size: 17px;
+}
+
+/* fim de propriedades das fontes. */
+
+.hero {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 50px 80px;
+  margin: 0px auto;
+  background-color: #ecefc2;
+  background-image: url("../imagens/linhas.png"), url("../imagens/circulos.png")!important;
+  background-size: 60%, 20%;
+  background-position: 10% 10%, 0% 100%;
+  background-repeat: no-repeat, no-repeat;
+}
+
+.hero-texto {
+  width: 55% !important;
+}
+.hero-imagem {
+  width: 45% !important;
+
+  text-align: right;
+}
+
+.area-faq {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: auto;
+  padding: 60px 30px;
+}
+
+.faq {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  justify-content: center;
+  width: 80%;
+}
+
+.questao {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.pergunta {
+  display: block;
+  width: 80%;
+  background-color: #ecefc2;
+  padding: 30px 30px;
+
+  color: #7f9838;
+  border-radius: 15px;
+  cursor: pointer;
+
+  margin: 2px 0px;
+  background-image: url("../imagens/circulos.png");
+  background-size: 15%;
+  background-position: -5%;
+  background-repeat: no-repeat;
+}
+
+.resposta {
+  position: relative;
+
+  margin-top: 20px;
+  margin-bottom: 20px;
+  padding: 40px 30px;
+  text-align: center;
+  border-top: #d8de85 5px solid;
+  border-radius: 8px;
+  box-shadow: 3px 7px 15px rgba(128, 128, 128, 0.2);
+  width: 70%;
+  display: none;
+}
+
+.ativo {
+  display: block;
+}
+
+/*aqui começa a seção do formulário*/
+
+.area-formulario {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin: 0px auto;
+
+  background-color: #ecefc2;
+  padding: 80px 0px;
+  background-image: url("../imagens/circulos.png"),
+    url("../imagens/circulos.png");
+  background-position: 0% 10%, 100% 100%;
+  background-size: 20%, 30%;
+
+  background-repeat: no-repeat;
+}
+
+.formulario {
+  max-width: 700px;
+}
+
+.formu-texto {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+.formulario form input,
+textarea {
+  padding: 7px 20px;
+  margin: 4px 0px;
+  border: solid 2px rgba(127, 152, 56, 0.5);
+  border-radius: 7px;
+  font-size: 17px;
+
+  background-color: rgba(250, 250, 250, 0.9);
+}
+
+textarea {
+  height: 150px;
+}
+
+#botao-enviar {
+  background-color: #a9c35b;
+  border: #c2d48a;
+  color: white;
+  padding: 12px 0px;
+  font-size: 17px;
+  font-weight: 300;
+}
+#botao-enviar:hover {
+  background-color: #d2d96e;
+
+  cursor: pointer;
+}
+
+/* responsivo hero e tamanho de título*/
+@media only screen and (max-width: 900px) {
+  .hero {
+    padding: 50px 25px !important;
+  }
+  h1 {
+    font-size: 45px;
+    line-height: 1;
+    overflow-y: hidden;
+  }
+  p {
+    font-size: 15px !important;
+  }
+
+  .area-faq {
+    padding: 20px 30px;
+  }
+}
+
+@media only screen and (max-width: 630px) {
+  .hero {
+    background-image: url("../imagens/contato-image.png");
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Do not repeat the image */
+    background-size: contain;
+  }
+  .hero-imagem {
+    display: none;
+  }
+
+  .hero-texto {
+    width: 100% !important;
+    background-color: rgba(250, 250, 250, 0.9);
+    border-radius: 30px;
+    padding: 25px;
+  }
+}
+/* fim do responsivo hero e tamanho de título*/
+
+@media only screen and (max-width: 900px) {
+  .faq {
+    width: 100%;
+    padding: 60px 0px;
+  }
+
+  .area-formulario {
+    padding: 80px 20px;
+  }
+}
+@media only screen and (max-width: 700px) {
+  .formu-texto h2 {
+    font-size: 35px;
+  }
+}
+
+/*responsivo telas grandes*/
+
+.caixa-sobre,
+.faq {
+  max-width: 1350px;
+}
+
+.hero {
+  max-width: 1400px;
+}
+.tela-grande-background {
+  background-color: #ecefc2;
+}

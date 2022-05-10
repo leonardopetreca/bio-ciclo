@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="CSS\headerFooter.css" rel="stylesheet" type="text/css" />
+    <link href="CSS\home.css" rel="stylesheet" type="text/css" />
+
+    <title>Home</title>
+
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+      integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script
+      nonce="undefined"
+      src="https://cdn.zingchart.com/zingchart.min.js"
+    ></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.7.1/dist/chart.min.js"></script>
+
+    <script type="text/javascript">
+      $("document").ready(function () {
+        $(".hamburguer").click(function () {
+          $(".menu").toggleClass("responsivo");
+        });
+      });
+    </script>
+
+    <script type="text/javascript">
+      var varCont;
+      var aciona = 0;
+
+      function startContador() {
+        //document.getElementById("bt-liga-misturador").style.display = ;
+
+        let Campo_temporizador = document.getElementById("dispara-misturador");
+        var seg = 0;
+        var min = 0;
+        var hora = 0;
+
+        if (aciona == 0) {
+          varCont = setInterval(contagem, 1000);
+
+          aciona = 1;
+
+          document.getElementById("bt-liga-misturador").style.opacity = 0.4;
+        }
+        function contagem() {
+          if (seg == 60) {
+            min = min + 1;
+            seg = 0;
+
+            if (min == 60) {
+              hora = hora + 1;
+              min = 0;
+            }
+          }
+
+          //vou colocar um zero na frente de valores <10
+
+          Campo_temporizador.innerHTML =
+            (hora < 10 ? "0" + hora : hora) +
+            ":" +
+            (min < 10 ? "0" + min : min) +
+            ":" +
+            (seg < 10 ? "0" + seg : seg);
+          seg = seg + 1;
+        }
+      }
+
+      function stopContador() {
+        clearInterval(varCont);
+        console.log("funciona");
+        aciona = 0;
+        document.getElementById("bt-liga-misturador").style.opacity = 1;
+      }
+    </script>
+    <script type="text/javascript">
+      var timer_programado;
+      var aumenta;
+      var diminui;
+      var min2 = 0;
+      var hora2 = 0;
+      var seg2 = 0;
+      var seg_timer;
+      var min_timer;
+      var hora_timer;
+      var CountZero;
+
+      var status = 0;
+
+      function aumentaTempo() {
+        timer_programado = document.getElementById("timerProgramado");
+        aumenta = document.getElementById("mais");
+        diminui = document.getElementById("menos");
+        if (status == 0) {
+          atualiza_mais();
+        }
+      }
+
+      function diminuiTempo() {
+        if (status == 0) {
+          atualiza_menos();
+        }
+      }
+
+      function atualiza_mais() {
+        if (min2 >= 59) {
+          hora2 = hora2 + 1;
+          min2 = 0;
+        }
+        min2 = min2 + 10;
+
+        timer_programado.innerHTML =
+          (hora2 < 10 ? "0" + hora2 : hora2) +
+          ":" +
+          (min2 < 10 ? "0" + min2 : min2) +
+          ":" +
+          (seg2 < 10 ? "0" + seg2 : seg2);
+        //min2 = min2 + 10;
+      }
+
+      function atualiza_menos() {
+        if (min2 <= 0) {
+          min2 = 60;
+          hora2 = hora2 - 1;
+        }
+
+        if (min2 >= 0 && hora2 >= 0) {
+          min2 = min2 - 10;
+          timer_programado.innerHTML =
+            (hora2 < 10 ? "0" + hora2 : hora2) +
+            ":" +
+            (min2 < 10 ? "0" + min2 : min2) +
+            ":" +
+            (seg2 < 10 ? "0" + seg2 : seg2);
+        }
+      }
+
+      function aciona_timer() {
+        timer_programado = document.getElementById("timerProgramado");
+        seg_timer = seg2;
+        min_timer = min2;
+        hora_timer = hora2;
+
+        status = 1;
+
+        if (status == 1 && (seg_timer > 0 || min_timer > 0 || hora_timer > 0)) {
+          CountZero = setInterval(conta_zero, 1000);
+          document.getElementById("definir").style.opacity = 0.4;
+        }
+      }
+
+      function conta_zero() {
+        //vou colocar um zero na frente de valores <10
+
+        if (min_timer == 0 && seg_timer == 0 && hora_timer > 0) {
+          hora_timer = hora_timer - 1;
+          min_timer = 59;
+          seg_timer = 59;
+        } else if (seg_timer == 0) {
+          min_timer = min_timer - 1;
+          seg_timer = 59;
+        }
+
+        timer_programado.innerHTML =
+          (hora_timer < 10 ? "0" + hora_timer : hora_timer) +
+          ":" +
+          (min_timer < 10 ? "0" + min_timer : min_timer) +
+          ":" +
+          (seg_timer < 10 ? "0" + seg_timer : seg_timer);
+        seg_timer = seg_timer - 1;
+      }
+
+      function cancela_acionamento() {
+        clearInterval(CountZero);
+        seg2 = 0;
+        min2 = 0;
+        hora2 = 0;
+        timer_programado.innerHTML =
+          (hora2 < 10 ? "0" + hora2 : hora2) +
+          ":" +
+          (min2 < 10 ? "0" + min2 : min2) +
+          ":" +
+          (seg2 < 10 ? "0" + seg2 : seg2);
+
+        status = 0;
+        document.getElementById("definir").style.opacity = 1;
+      }
+    </script>
+
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap");
+      @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap");
+      @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap");
+      @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400&display=swap");
+      @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap");
+      @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap");
+    </style>
+  </head>
+  <body>
+    <!--  AQUI  É O HEADER, O CABEÇALHO DA PÁGINA-->
+
+    <div class="cabecalho">
+      <div class="logo">
+        <img src="imagens\logo.png" width="190" height="auto" />
+      </div>
+
+      <div class="hamburguer">
+        <img src="\composteira\imagens\hamburguer.png" width="32" />
+      </div>
+
+      <div class="menu responsivo">
+        <ul>
+          <li><a href="index.html">Minha Composteira</a></li>
+          <li><a href="sobre-nos.html">Sobre Nós</a></li>
+          <li><a href="manual.html">Manual</a></li>
+          <li><a href="contato.html">Contato</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- AQUI COMEÇA O CONTEÚDO DA PÁGINA -->
+    <div class="corpo-pagina">
+      <div class="tela-grande-background">
+        <div class="hero">
+          <div class="hero-texto">
+            <h1>
+              Pré Composto em <span style="color: #abbb6f">72 Horas</span>
+            </h1>
+            <p>
+              A nossa composteira permite o controle de variáveis importantes
+              para o processo de decomposição orgânica, garantindo agilidade e
+              segurança em sua utilização.
+            </p>
+            <div class="cta-botoes">
+              <a href="#minhaComposteira" class="cta-primeiro-bt"
+                >Minha composteira</a
+              >
+              <a href="contato.html" class="cta-contato">Fale conosco</a>
+            </div>
+          </div>
+          <div class="hero-imagem">
+            <img src="/composteira/imagens/home-image.png" width="400" height="auto" />
+          </div>
+        </div>
+      </div>
+
+      <div class="area-sobre">
+        <div class="caixa-sobre">
+          <div class="caixa-sobre-imagem">
+            <img src="/composteira/imagens/sobre.png" width="300" height="auto" />
+          </div>
+          <div class="caixa-sobre-texto">
+            <h2>O projeto</h2>
+            <p>
+              Este é um projeto elaborado por estudantes da Universidade Federal
+              do ABC para a matéria de Engenharia Unificada II. Nosso principal
+              objetivo é construir, de forma colaborativa, uma composteira que
+              possa ser utilizada pela nossa faculdade e que tenha um processo
+              de compostagem automatizado.
+            </p>
+            <div class="cta-botoes">
+              <a
+                href="sobre-nos.html"
+                class="cta-primeiro-bt"
+                id="saiba-mais-bt"
+                >Saiba Mais</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="espaco-comandos">
+        <div class="comandos-texto">
+          <h2>Comande aqui sua composteira</h2>
+          <p style="color: #777664">
+            Utilize os botões abaixo para programar comandos em sua composteira
+            sem a necessidade de estar fisicamente no mesmo local que ela.
+          </p>
+        </div>
+        <div class="comandos-acionadores">
+          <div class="comando-card">
+            <div class="comando-description">
+              <div class="comando-description-imagem">
+                <img src="/composteira/imagens/relogio.png" width="20" />
+              </div>
+              <div class="comando-description-text">
+                <h4>Quer que o próximo ciclo inicie em quanto tempo?</h4>
+              </div>
+            </div>
+            <div class="cronometro">
+              <div id="menos" onclick="diminuiTempo()" class="timer-controle">
+                -
+              </div>
+              <div id="timerProgramado" class="timer">00:00:00</div>
+              <div id="mais" onclick="aumentaTempo()" class="timer-controle">
+                +
+              </div>
+            </div>
+            <div class="comando-botoes">
+              <div class="botoes-cronometro">
+                <a
+                  id="definir"
+                  onclick="aciona_timer()"
+                  class="bt-cronometro bt1"
+                  >Definir</a
+                >
+                <a onclick="cancela_acionamento()" class="bt-cronometro bt2"
+                  >Cancelar</a
+                >
+              </div>
+            </div>
+          </div>
+
+          <div id="minhaComposteira" class="comando-card">
+            <div class="comando-description">
+              <div class="comando-description-imagem">
+                <img src="/composteira/imagens/power on.png" width="38" />
+              </div>
+              <div class="comando-description-text">
+                <h4>
+                  Acione o misturador. <br />Veja há quanto tempo ele esá ligado
+                </h4>
+              </div>
+            </div>
+            <div class="cronometro">
+              <div id="dispara-misturador" class="timer misturador">
+                00:00:00
+              </div>
+            </div>
+            <div class="comando-botoes">
+              <div class="botoes-cronometro">
+                <a
+                  id="bt-liga-misturador"
+                  onclick="startContador()"
+                  class="bt-cronometro bt1"
+                  >Iniciar</a
+                >
+                <a
+                  id="bt-pausa"
+                  onclick="stopContador()"
+                  class="bt-cronometro bt2"
+                  >Parar</a
+                >
+              </div>
+            </div>
+          </div>
+
+          <div class="comando-imagem">
+            <img src="/composteira/imagens/operador.png" width="350" />
+          </div>
+        </div>
+      </div>
+
+      <div class="area-dash">
+        <div class="dash-texto">
+          <h2>Variáveis da sua composteira</h2>
+          <p style="color: #777664">
+            Conheça algumas variáveis fundamentais que regem a compostagem e que
+            estão ocorrendo nesse momento na sua composteira.
+          </p>
+        </div>
+        <div class="caixa-sobre">
+          <div class="caixa-sobre-imagem grafico">
+            <div id="myChart2"></div>
+          </div>
+          <div class="caixa-sobre-texto">
+            <h3>pH</h3>
+            <p>
+              Condiciona o desenvolvimento dos microorganismos essensicais para
+              a decomposição. Para o equilíbrio do pH, a faixa ideal é entre 6,5
+              e 8,0. Essa faixa indica dominação bacteriana no processo.
+            </p>
+          </div>
+        </div>
+
+        <div class="caixa-sobre">
+          <div class="caixa-sobre-texto">
+            <h3>Temperatura</h3>
+            <p>
+              Associada ao pH, é resultado da ação dos microorganismos no
+              processo de comostagem. A faixa ideal de temperatura fica entre
+              60°C e 65°C e, após algumas horas, indica que a atividade
+              microbiana não está inibida.
+            </p>
+          </div>
+          <div class="caixa-sobre-imagem grafico">
+            <div id="myChartTemp"></div>
+          </div>
+        </div>
+
+        <div class="caixa-sobre">
+          <div class="caixa-sobre-imagem grafico">
+            <div id="myChartUmidade"></div>
+          </div>
+          <div class="caixa-sobre-texto">
+            <h3>Umidade</h3>
+            <p>
+              É super-importante para garantir uma boa taxa de compostagem e
+              evitar a geração de maus odores. Para que as condições acima sejam
+              alcançadas, a faixa ideal fica entre 50~60% dde base úmida.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- AQUI ACABA O CONTEÚDO DA PÁGINA -->
+
+    <div class="rodape">
+      <div class="logo-rodape">
+        <img src="/composteira/imagens/logo branco.png" width="200" height="auto" />
+      </div>
+
+      <div class="menu-rodape">
+        <ul>
+          <li><a href="index.html">Minha Composteira</a></li>
+          <li><a href="sobre-nos.html">Sobre Nós</a></li>
+          <li><a href="manual.html">Manual</a></li>
+          <li><a href="contato.html">Contato</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="pos-rodape">
+      <hr />
+      <p>Bio-ciclo © 2022 | Todos os direitos reservados</p>
+    </div>
+  </body>
+
+  <script type="text/javascript">
+    let chartConfig2 = {
+      type: "line",
+      plotarea: {
+        margin: "dynamic",
+        adjustLayout: true,
+      },
+
+      csv: {
+        //   url: "https://storage.googleapis.com/studio-assets/resources/fruitcsv.txt",
+        url: "./csv/ph.csv",
+        "row-separator": ";",
+        title: true,
+      },
+
+      scaleY: {
+        values: "5:10",
+        label: { text: "pH" },
+
+        markers: [
+          {
+            type: "line",
+            range: [6.5],
+            lineColor: "#7F9838",
+            lineWidth: 2,
+            label: { text: "6,5" },
+          },
+          {
+            type: "line",
+            range: [8],
+            lineColor: "#7F9838",
+            lineWidth: 2,
+            label: { text: "8" },
+          },
+        ],
+      },
+      scaleX: {
+        zooming: true,
+        "zoom-to": [0, 60],
+        label: { text: "n° medida" },
+      },
+
+      "scroll-x": {
+        bar: {
+          "background-color": "#DCEDC8",
+          alpha: 0.5,
+        },
+      },
+    };
+
+    zingchart.render({
+      id: "myChart2",
+      data: chartConfig2,
+      height: 400,
+      width: "100%",
+    });
+  </script>
+
+  <script type="text/javascript">
+    /*GRÁFICO DA TEMPERATURA*/
+    let chartConfigTemp = {
+      type: "line",
+      plotarea: {
+        margin: "dynamic",
+        adjustLayout: true,
+      },
+
+      csv: {
+        //   url: "https://storage.googleapis.com/studio-assets/resources/fruitcsv.txt",
+        url: "./csv/temperatura.csv",
+        "row-separator": ";",
+        title: true,
+      },
+
+      scaleY: {
+        values: "58:67",
+        label: { text: "Temperatura [°C]" },
+
+        markers: [
+          {
+            type: "line",
+            range: [60],
+            lineColor: "#7F9838",
+            lineWidth: 2,
+            label: { text: "60°C" },
+          },
+          {
+            type: "line",
+            range: [65],
+            lineColor: "#7F9838",
+            lineWidth: 2,
+            label: { text: "65°C" },
+          },
+        ],
+      },
+      scaleX: {
+        zooming: true,
+        "zoom-to": [0, 70],
+        label: { text: "n° medida" },
+      },
+
+      "scroll-x": {
+        bar: {
+          "background-color": "#DCEDC8",
+          alpha: 0.5,
+        },
+      },
+    };
+
+    zingchart.render({
+      id: "myChartTemp",
+      data: chartConfigTemp,
+      height: 400,
+      width: "100%",
+    });
+  </script>
+
+  <script type="text/javascript">
+    /*GRÁFICO DA Umidade*/
+    let chartConfigUmidade = {
+      type: "line",
+      plotarea: {
+        margin: "dynamic",
+        adjustLayout: true,
+      },
+
+      csv: {
+        //   url: "https://storage.googleapis.com/studio-assets/resources/fruitcsv.txt",
+        url: "./csv/umidade.csv",
+        "row-separator": ";",
+        title: true,
+      },
+
+      scaleY: {
+        values: "45:70",
+        label: { text: "Umidade[%]" },
+
+        markers: [
+          {
+            type: "line",
+            range: [50],
+            lineColor: "#7F9838",
+            lineWidth: 2,
+            label: { text: "50" },
+          },
+          {
+            type: "line",
+            range: [60],
+            lineColor: "#7F9838",
+            lineWidth: 2,
+            label: { text: "60" },
+          },
+        ],
+      },
+      scaleX: {
+        zooming: true,
+        "zoom-to": [0, 60],
+        label: { text: "n° medida" },
+      },
+
+      "scroll-x": {
+        bar: {
+          "background-color": "#DCEDC8",
+          alpha: 0.5,
+        },
+      },
+    };
+
+    zingchart.render({
+      id: "myChartUmidade",
+      data: chartConfigUmidade,
+      height: 400,
+      width: "100%",
+    });
+  </script>
+</html>

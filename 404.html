@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="CSS\headerFooter.css" rel="stylesheet" type="text/css" />
+    <link href="CSS\404.css" rel="stylesheet" type="text/css" />
+    <title>404</title>
+
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+      integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+
+    <script type="text/javascript">
+      $("document").ready(function () {
+        $(".hamburguer").click(function () {
+          $(".menu").toggleClass("responsivo");
+        });
+      });
+    </script>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap");
+      @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap");
+      @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap");
+      @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400&display=swap");
+      @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap");
+      @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap");
+    </style>
+  </head>
+
+  <body>
+    <!--  AQUI  É O HEADER, O CABEÇALHO DA PÁGINA-->
+
+    <div class="cabecalho">
+      <div class="logo">
+        <img src="/composteira/imagens/logo.png" width="190" height="auto" />
+      </div>
+
+      <div class="hamburguer">
+        <img src="/composteira/imagens/hamburguer.png" width="32" />
+      </div>
+
+      <div class="menu responsivo">
+        <ul>
+          <li><a href="index.html">Minha Composteira</a></li>
+          <li><a href="sobre-nos.html">Sobre Nós</a></li>
+          <li><a href="manual.html">Manual</a></li>
+          <li><a href="contato.html">Contato</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- AQUI COMEÇA O CONTEÚDO DA PÁGINA -->
+
+    <div class="corpo-pagina-404">
+      <div class="texto-erro">
+        <h1>Erro <span style="color: #a9c35b">404</span></h1>
+        <p>Não encontramos a página que você busca no servidor.</p>
+      </div>
+      <div class="imagem-erro">
+        <img src="/composteira/imagens/404erro.png" width="450" height="auto" />
+      </div>
+    </div>
+
+    <!-- AQUI ACABA O CONTEÚDO DA PÁGINA -->
+
+    <div class="rodape">
+      <div class="logo-rodape">
+        <img src="/composteira/imagens/logo branco.png" width="200" height="auto" />
+      </div>
+
+      <div class="menu-rodape">
+        <ul>
+          <li><a href="index.html">Minha Composteira</a></li>
+          <li><a href="sobre-nos.html">Sobre Nós</a></li>
+          <li><a href="manual.html">Manual</a></li>
+          <li><a href="contato.html">Contato</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="pos-rodape">
+      <hr />
+      <p>Bio-ciclo © 2022 | Todos os direitos reservados</p>
+    </div>
+  </body>
+</html>

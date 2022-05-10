@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="CSS\headerFooter.css" rel="stylesheet" type="text/css" />
+    <link href="CSS\sobre.css" rel="stylesheet" type="text/css" />
+
+    <title>Sobre Nós</title>
+
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+      integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+
+    <script type="text/javascript">
+      $("document").ready(function () {
+        $(".hamburguer").click(function () {
+          $(".menu").toggleClass("responsivo");
+        });
+      });
+    </script>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap");
+      @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap");
+      @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap");
+      @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400&display=swap");
+      @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap");
+      @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap");
+    </style>
+  </head>
+  <body>
+    <!--  AQUI  É O HEADER, O CABEÇALHO DA PÁGINA-->
+
+    <div class="cabecalho">
+      <div class="logo">
+        <img src="/composteira/imagens/logo.png" width="190" height="auto" />
+      </div>
+
+      <div class="hamburguer">
+        <img src="/composteira/imagens/hamburguer.png" width="32" />
+      </div>
+
+      <div class="menu responsivo">
+        <ul>
+          <li><a href="index.html">Minha Composteira</a></li>
+          <li><a href="sobre-nos.html">Sobre Nós</a></li>
+          <li><a href="manual.html">Manual</a></li>
+          <li><a href="contato.html">Contato</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- AQUI COMEÇA O CONTEÚDO DA PÁGINA -->
+    <div class="corpo-pagina">
+      <div class="tela-grande-background">
+        <div class="hero">
+          <div class="hero-texto">
+            <h1>Sobre Nós</h1>
+            <p>
+              Conheça mais sobre o projeto e sobre o processo de compostagem nas
+              seções abaixo.
+            </p>
+          </div>
+          <div class="hero-imagem">
+            <img src="/composteira/imagens/sobre.png" width="300" height="auto" />
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="area-sobre">
+      <div class="caixa-sobre">
+        <div class="caixa-sobre-imagem">
+          <img src="/composteira/imagens/sobre.png" width="300" height="auto" />
+        </div>
+        <div class="caixa-sobre-texto">
+          <h2>O projeto</h2>
+          <p>
+            Elaborado pelos estudantes da Universidade Federal do ABC para a
+            matéria de Engenharia Unificada II, esse projeto tem por principal
+            objetivo construir, de forma colaborativa, uma composteira para ser
+            utilizada pela própria universidade.
+          </p>
+        </div>
+      </div>
+
+      <div class="caixa-sobre">
+        <div class="caixa-sobre-texto">
+          <p>
+            Além de garantir um processo de decomposição orgânica com agilidade
+            e segurança, um dos objetivos do projeto é desenvolver a composteira
+            de modo que o processo de compostagem seja completamente
+            automatizado e controlável via aplicativo. Isso será possível com o
+            acompanhamento das principais variáveis do processo de decomposição
+            na tela de um celular ou computador.
+          </p>
+        </div>
+
+        <div class="caixa-sobre-imagem">
+          <img src="/composteira/imagens/sobre2.png" width="400" height="auto" />
+        </div>
+      </div>
+    </div>
+
+    <div class="tela-grande-background">
+      <div class="call-to-action">
+        <div class="cta-conteudo">
+          <h2>Ficou com dúvidas?</h2>
+          <p>
+            Consulte a nossa FAQ ou entre em contato com nosso time técnico.
+          </p>
+          <div class="cta-botoes">
+            <a href="contato.html" class="cta-contato">Contato</a>
+          </div>
+        </div>
+        <div class="cta-imagem">
+          <img src="/composteira/imagens/duvida-cta.png" width="300" height="auto" />
+        </div>
+      </div>
+    </div>
+
+    <div class="espaco-compostagem">
+      <h2>Como funciona a compostagem?</h2>
+      <div class="tutorial-compostagem">
+        <div class="fase">
+          <div class="fase-imagem">
+            <img src="/composteira/imagens/ft1Compostagem.png" width="300" height="auto" />
+          </div>
+
+          <div class="fase-conteudo">
+            <div class="fase-card">
+              <div class="fase-card-titulo"><h3>Fase 1</h3></div>
+              <div class="fase-card-texto">
+                Na primeira fase, são depositados os resíduos de matéria
+                orgânica para que o processo inicie.
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="fase">
+          <div class="fase-imagem">
+            <img src="/composteira/imagens/ft2compostagem.png" width="300" height="auto" />
+          </div>
+
+          <div class="fase-conteudo">
+            <div class="fase-card">
+              <div class="fase-card-titulo"><h3>Fase 2</h3></div>
+              <div class="fase-card-texto">
+                Ocorre o aumento das populações de fungos e bactérias.
+                <br /><br />
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="fase">
+          <div class="fase-imagem">
+            <img src="/composteira/imagens/ft3compostagem.png" width="300" height="auto" />
+          </div>
+
+          <div class="fase-conteudo">
+            <div class="fase-card">
+              <div class="fase-card-titulo"><h3>Fase 3</h3></div>
+              <div class="fase-card-texto">
+                A temperatura varia de 20°C a 60°C por conta da ação dos
+                microrganismos.
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="fase">
+          <div class="fase-imagem">
+            <img src="/composteira/imagens/ft4compostagem.png" width="300" height="auto" />
+          </div>
+
+          <div class="fase-conteudo">
+            <div class="fase-card">
+              <div class="fase-card-titulo"><h3>Fase 4</h3></div>
+              <div class="fase-card-texto">
+                Ocorre a sanitização dos organismos patogênicos.
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="fase">
+          <div class="fase-imagem">
+            <img src="/composteira/imagens/ft5compostagem.png" width="300" height="auto" />
+          </div>
+
+          <div class="fase-conteudo">
+            <div class="fase-card">
+              <div class="fase-card-titulo"><h3>Fase 5</h3></div>
+              <div class="fase-card-texto">
+                Acontece a fase de maturação: a matéria oxidada sofre o processo
+                de humidificação.
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="fase">
+          <div class="fase-imagem">
+            <img src="/composteira/imagens/ft6compostagem.png" width="300" height="auto" />
+          </div>
+
+          <div class="fase-conteudo">
+            <div class="fase-card">
+              <div class="fase-card-titulo"><h3>Fase 6</h3></div>
+              <div class="fase-card-texto">
+                Forma-se um produto rico em matéria orgânica que não causa danos
+                quando aplicada ao solo.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- AQUI ACABA O CONTEÚDO DA PÁGINA -->
+
+    <div class="rodape">
+      <div class="logo-rodape">
+        <img src="/composteira/imagens/logo branco.png" width="200" height="auto" />
+      </div>
+
+      <div class="menu-rodape">
+        <ul>
+          <li><a href="index.html">Minha Composteira</a></li>
+          <li><a href="sobre-nos.html">Sobre Nós</a></li>
+          <li><a href="manual.html">Manual</a></li>
+          <li><a href="contato.html">Contato</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="pos-rodape">
+      <hr />
+      <p>Bio-ciclo © 2022 | Todos os direitos reservados</p>
+    </div>
+  </body>
+</html>

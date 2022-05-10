@@ -1,0 +1,457 @@
+/*  h1 = 60px, h2 - 40px , p=17px */
+
+* {
+  margin: 0px;
+  padding: 0px;
+  text-decoration: none;
+  list-style: none;
+  font-family: "Poppins";
+  overflow-x: hidden !important;
+}
+
+/* propriedades das fontes. */
+h1 {
+  font-size: 60px;
+  font-weight: 600;
+  line-height: 1;
+  overflow-y: hidden;
+}
+.hero h1 {
+  color: #abbb6f;
+}
+
+h2 {
+  color: #7f9838;
+  font-size: 45px;
+}
+.hero p {
+  color: #777664;
+  font-weight: 400;
+  font-size: 17px;
+}
+
+/* fim de propriedades das fontes. */
+
+.hero {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 50px 80px;
+  margin: 0px auto;
+  background-color: #ecefc2;
+  background-image: url("../imagens/linhas.png"), url("../imagens/circulos.png");
+  background-size: 60%, 20%;
+  background-position: 10% 10%, 0% 100%;
+  background-repeat: no-repeat, no-repeat;
+}
+
+.hero-texto {
+  width: 55% !important;
+}
+.hero-imagem {
+  width: 45% !important;
+
+  text-align: right;
+}
+
+/* responsivo hero e tamanho de título*/
+@media only screen and (max-width: 900px) {
+  .hero {
+    padding: 50px 25px !important;
+  }
+  h1 {
+    font-size: 45px;
+    line-height: 1;
+    overflow-y: hidden;
+  }
+  p {
+    font-size: 15px !important;
+  }
+}
+
+@media only screen and (max-width: 630px) {
+  .hero {
+    background-image: url("../imagens/manual.png");
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Do not repeat the image */
+    background-size: contain;
+  }
+  .hero-imagem {
+    display: none;
+  }
+
+  .hero-texto {
+    width: 100% !important;
+    background-color: rgba(250, 250, 250, 0.9);
+    border-radius: 30px;
+    padding: 25px;
+  }
+}
+/* fim do responsivo hero e tamanho de título*/
+
+/*conteudo manual*/
+
+.pecas-texto h2 {
+  color: #7f9838;
+  font-size: 45px;
+  text-align: center;
+}
+.area-pecas {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 56px 20px;
+  background-image: url("../imagens/circulos.png"),
+    url("../imagens/circulos.png"), url("../imagens/circulos.png");
+  background-size: 20%, 20%, 20%;
+  background-position: 110% 10%, -10% 60%, 110% 95%;
+  background-repeat: no-repeat, no-repeat;
+}
+
+.grid-pecas {
+  display: flex;
+  flex-direction: row !important;
+  justify-content: center;
+  margin-top: 20px;
+  width: 80%;
+  flex-wrap: wrap;
+}
+
+.peca {
+  padding: 30px 35px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 2px 2px 15px rgba(128, 128, 128, 0.2);
+  border-radius: 10px;
+  margin: 20px 10px;
+
+  width: 150px;
+}
+
+.peca-foto {
+  width: 100px;
+  height: 100px;
+  border-radius: 50px;
+  background-color: rgba(128, 128, 128, 0.1);
+  margin-bottom: 10px;
+}
+
+.peca-texto h4 {
+  font-size: 20px;
+  color: #353535;
+}
+
+.peca-texto h5 {
+  font-size: 15px;
+  font-weight: 500;
+  color: #abbb6f;
+}
+
+.peca-texto p {
+  font-size: 14px;
+  font-weight: 300;
+  color: #abbb6f;
+}
+
+/*tutorial*/
+
+.area-tutorial h2 {
+  color: #7f9838;
+  font-size: 45px;
+  margin-bottom: 50px;
+}
+.area-tutorial {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 50px 20px;
+  background-image: url("../imagens/circulos.png"),
+    url("../imagens/circulos.png"), url("../imagens/circulos.png");
+  background-size: 20%, 20%, 20%;
+  background-position: -10% 10%, 110% 60%, -10% 95%;
+  background-repeat: no-repeat, no-repeat;
+}
+
+.tutorial-etapa {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+
+  width: 90%;
+}
+
+.etapa-imagem {
+  display: block;
+  width: 40%;
+  text-align: center;
+}
+
+.etapa-instrucao {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 60%;
+}
+
+.card-instrucao {
+  display: block;
+  flex-direction: column;
+  width: 80%;
+  box-shadow: 2px 2px 15px rgba(128, 128, 128, 0.1);
+  border-radius: 10px;
+}
+
+.instrucao-titulo {
+  background-color: #ecefc2;
+  color: #7f9838;
+
+  padding: 15px 0px 10px 20px;
+  border-bottom: solid 5px #d8de85;
+}
+
+.instrucao-conteudo {
+  padding: 15px 20px 15px 20px;
+  color: #777664;
+}
+
+/*CALL TO ACTION*/
+
+.call-to-action {
+  display: flex;
+
+  flex-direction: row;
+
+  align-items: center;
+  justify-content: center;
+  margin: 0px auto;
+  padding: 50px 120px;
+
+  background-color: #ecefc2;
+
+  background-image: url("../imagens/linhas.png"), url("../imagens/circulos.png");
+  background-size: 60%, 20%;
+  background-position: 100% 10%, 0% 100%;
+  background-repeat: no-repeat, no-repeat;
+}
+
+.cta-conteudo {
+  width: 80%;
+}
+.cta-conteudo h2 {
+  color: #7f9838;
+  font-size: 55px;
+}
+.cta-conteudo p {
+  color: #777664;
+}
+
+.cta-imagem {
+  width: 30%;
+}
+
+.cta-botoes {
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+  padding: 10px 0px;
+}
+
+.cta-download {
+  background-color: #d2d96e;
+  color: white;
+  font-weight: 400 !important;
+  font-size: 18px;
+  padding: 13px 40px !important;
+  border-radius: 30px;
+  box-shadow: 3px 3px 15px rgba(128, 128, 128, 0.2);
+  width: 150px;
+  text-align: center;
+}
+
+.cta-download:hover {
+  background-color: white;
+  color: #d2d96e;
+}
+
+.cta-contato {
+  background-color: white;
+  color: #d2d96e;
+  font-weight: 400 !important;
+  font-size: 18px;
+  padding: 13px 40px !important;
+  border-radius: 30px;
+  box-shadow: 1px 1px 15px rgba(128, 128, 128, 0.2);
+  width: 150px;
+  text-align: center;
+  margin-left: 20px;
+}
+
+.cta-contato:hover {
+  background-color: #d2d96e;
+  color: white;
+}
+
+/*tutorial dash*/
+
+.espaco-tutorial-dash h2 {
+  color: #7f9838;
+  font-size: 45px;
+  margin-bottom: 50px;
+  text-align: center;
+}
+
+.espaco-tutorial-dash {
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+  padding: 60px 20px;
+  background-image: url("../imagens/circulos.png"),
+    url("../imagens/circulos.png"), url("../imagens/circulos.png");
+  background-size: 20%, 20%, 20%;
+  background-position: 100% 10%, -10% 60%, 110% 95%;
+  background-repeat: no-repeat, no-repeat;
+}
+
+.tutorial-dash {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+
+  flex-wrap: wrap;
+}
+
+.funcionalidade {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 500px;
+  margin: 20px 0px;
+}
+
+.card-instrucao-dash {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0px auto;
+  width: 85%;
+
+  box-shadow: 2px 2px 15px rgba(128, 128, 128, 0.1);
+  border-radius: 10px;
+  text-align: center;
+
+  margin-bottom: 30px;
+}
+
+.instrucao-titulo-dash {
+  background-color: #ecefc2;
+  color: #7f9838;
+  width: 100%;
+  padding: 15px 0px 10px 20px;
+  border-bottom: solid 5px #d8de85;
+}
+
+.instrucao-conteudo-dash {
+  padding: 15px 20px 15px 20px;
+  color: #777664;
+}
+
+@media only screen and (max-width: 700px) {
+  h2 {
+    font-size: 35px !important;
+  }
+}
+
+@media only screen and (max-width: 900px) {
+  h2 {
+    text-align: center;
+    line-height: 1;
+    overflow-y: hidden;
+    padding-bottom: 10px;
+  }
+}
+
+@media only screen and (max-width: 950px) {
+  .cta-imagem {
+    display: none;
+  }
+  .call-to-action {
+    text-align: center;
+    padding: 50px 20px;
+  }
+
+  .cta-conteudo {
+    width: 100%;
+  }
+  .cta-botoes {
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+  }
+  .cta-botoes a {
+    margin: 5px 0px 5px 0px;
+  }
+}
+@media only screen and (max-width: 1000px) {
+  .tutorial-etapa {
+    flex-direction: column;
+    padding: 0px !important;
+    align-items: center;
+    text-align: center;
+
+    margin: 30px 0px 30px 0px;
+    width: auto;
+  }
+
+  .tutorial-etapa:nth-child(odd) {
+    flex-direction: column-reverse;
+  }
+  .etapa-instrucao {
+    width: 90%;
+  }
+
+  .card-instrucao {
+    width: auto;
+  }
+
+  .instrucao-titulo {
+    padding: 15px 0px 10px 20px;
+  }
+
+  .etapa-imagem {
+    width: 100%;
+  }
+
+  .funcionalidade {
+    width: auto;
+  }
+  .funcionalidade-card {
+    width: auto;
+  }
+}
+
+.grid-pecas,
+.call-to-action {
+  max-width: 1350px;
+}
+
+.espaco-tutorial-dash,
+.tutorial-etapa {
+  max-width: 1500px;
+
+  margin: auto auto;
+}
+
+.hero {
+  max-width: 1400px;
+}
+.tela-grande-background {
+  background-color: #ecefc2;
+}

@@ -1,0 +1,52 @@
+* {
+  text-decoration: none;
+  list-style: none;
+  font-family: "Poppins";
+  overflow-x: hidden !important;
+}
+
+.corpo-pagina-404 {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0px 120px;
+
+  max-width: 1200px;
+  margin: 0px auto;
+  min-height: 650px;
+}
+
+.texto-erro {
+  display: block;
+  margin: 0 !important;
+}
+.texto-erro h1 {
+  font-size: 100px;
+
+  margin: 0 !important;
+}
+.texto-erro p {
+  font-size: 18px;
+
+  margin: 0 !important;
+}
+
+@media only screen and (max-width: 1070px) {
+  .corpo-pagina-404 {
+    padding: 0px 30px;
+  }
+  .texto-erro h1 {
+    font-size: 80px;
+  }
+}
+
+@media only screen and (max-width: 890px) {
+  .corpo-pagina-404 {
+    flex-direction: column;
+    padding: 70px 30px 30px 30px;
+    text-align: center;
+  }
+  .texto-erro h1 {
+    font-size: 70px;
+  }
+}

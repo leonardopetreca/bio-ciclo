@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="CSS\headerFooter.css" rel="stylesheet" type="text/css" />
+    <link href="CSS/contato.css" rel="stylesheet" type="text/css" />
+
+    <script type="text/javascript" src="js\contato.js"></script>
+    <title>Contato</title>
+
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+      integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+
+    <script type="text/javascript">
+      $("document").ready(function () {
+        $(".hamburguer").click(function () {
+          $(".menu").toggleClass("responsivo");
+        });
+      });
+    </script>
+
+    <script type="text/javascript">
+      //codigo faq/
+      $("document").ready(function () {
+        var acordeao = document.getElementsByClassName("pergunta");
+        var respostas = document.getElementsByClassName("resposta");
+
+        console.log(respostas);
+        for (let i = 0; i < acordeao.length; i++) {
+          acordeao[i].addEventListener("click", function () {
+            for (let j = 0; j < respostas.length; j++) {
+              if (respostas[j].classList.contains("ativo")) {
+                respostas[j].classList.remove("ativo");
+              }
+            }
+            respostas[i].classList.add("ativo");
+          });
+        }
+      });
+    </script>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap");
+      @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap");
+      @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap");
+      @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400&display=swap");
+      @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap");
+      @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap");
+    </style>
+  </head>
+
+  <body>
+    <!--  AQUI  É O HEADER, O CABEÇALHO DA PÁGINA-->
+
+    <div class="cabecalho">
+      <div class="logo">
+        <img src="/composteira/imagens/logo.png" width="190" height="auto" />
+      </div>
+
+      <div class="hamburguer">
+        <img src="/composteira/imagens/hamburguer.png" width="32" />
+      </div>
+
+      <div class="menu responsivo">
+        <ul>
+          <li><a href="index.html">Minha Composteira</a></li>
+          <li><a href="sobre-nos.html">Sobre Nós</a></li>
+          <li><a href="manual.html">Manual</a></li>
+          <li><a href="contato.html">Contato</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- AQUI COMEÇA O CONTEÚDO DA PÁGINA -->
+
+    <div class="corpo-pagina">
+      <div class="tela-grande-background">
+        <div class="hero">
+          <div class="hero-texto">
+            <h1>Entre em contato</h1>
+            <p>
+              Se ficou com dúvida de como operar a sua composteira, leia a nossa
+              FAQ ou fale com o time de desenvolvedores.
+            </p>
+          </div>
+          <div class="hero-imagem">
+            <img src="/composteira/imagens/contato-image.png" width="300" height="auto" />
+          </div>
+        </div>
+      </div>
+      <div class="area-faq">
+        <div id="faq" class="faq">
+          <div class="questao">
+            <div class="pergunta"><h3>O que é compostagem?</h3></div>
+            <div class="resposta">
+              <p>
+                A compostagem é o processo natural de reciclagem de matéria
+                orgânica, como folhas e restos de comida, em um fertilizante
+                valioso que pode enriquecer o solo e as plantas.
+                <a
+                  style="color: #7f9838; font-weight: 700"
+                  href="sobre-nos.html"
+                  >Confira o processo de compostagem
+                </a>
+              </p>
+            </div>
+          </div>
+
+          <div class="questao">
+            <div class="pergunta">
+              <h3>Quais são os resíduos mais indicados?</h3>
+            </div>
+            <div class="resposta">
+              <p>
+                Frutas: maçã, banana, mamão, pêra etc<br />
+                Legumes: cenoura, abobrinha, nabo, pepino etc<br />
+                Verduras: brócolis, couve-flor, couve, rúcula etc
+              </p>
+            </div>
+          </div>
+
+          <div class="questao">
+            <div class="pergunta">
+              <h3>Quais são os resíduos contraindicados?</h3>
+            </div>
+            <div class="resposta">
+              <p>Limão, Carnes, Temperos fortes, alimentos cozidos etc</p>
+            </div>
+          </div>
+
+          <div class="questao">
+            <div class="pergunta">
+              <h3>Posso triturar os alimentos num processador?</h3>
+            </div>
+            <div class="resposta">
+              <p>
+                Os resíduos devem ser picotados, porém não é recomendado
+                triturar em pedaços muito pequenos ou deixar em consistência
+                pastosa, visto que impediria a circulação de ar, uma vez que
+                estamos tratando de um processo aeróbico.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <script>
+        function sendButton() {
+          var form = document.getElementById("contact-form");
+          var formData = new FormData(form);
+
+          var xhr1 = new XMLHttpRequest();
+          xhr1.open("POST", "sendEmail.php", true);
+          xhr1.send(formData);
+
+          form.action = "index.html";
+
+          return true;
+        }
+      </script>
+      <div class="area-formulario">
+        <div class="formulario">
+          <div class="formu-texto">
+            <h2>Fale com os desenvolvedores</h2>
+            <p>
+              Ficou com alguma dúvida? Preencha o formulário abaixo e fale
+              conosco!
+            </p>
+          </div>
+          <form id="contact-form" method="POST">
+            <input type="text" id="nome" name="nome" placeholder="Nome" />
+            <input type="tel" id="tel" name="tel" placeholder="Telefone" />
+            <input type="email" id="email" name="email" placeholder="Email" />
+            <input
+              type="text"
+              id="assunto"
+              name="assunto"
+              placeholder="Assunto"
+            />
+            <textarea
+              name="menssagem"
+              rows="10"
+              cols="30"
+              placeholder="Mensagem"
+            ></textarea>
+            <input
+              id="botao-enviar"
+              onclick="sendButton()"
+              type="submit"
+              value="Enviar Mensagem"
+            />
+          </form>
+        </div>
+      </div>
+    </div>
+    <!-- AQUI ACABA O CONTEÚDO DA PÁGINA -->
+
+    <div class="rodape">
+      <div class="logo-rodape">
+        <img src="/composteira/imagens/logo branco.png" width="200" height="auto" />
+      </div>
+
+      <div class="menu-rodape">
+        <ul>
+          <li><a href="index.html">Minha Composteira</a></li>
+          <li><a href="sobre-nos.html">Sobre Nós</a></li>
+          <li><a href="manual.html">Manual</a></li>
+          <li><a href="contato.html">Contato</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="pos-rodape">
+      <hr />
+      <p>Bio-ciclo © 2022 | Todos os direitos reservados</p>
+    </div>
+  </body>
+</html>
